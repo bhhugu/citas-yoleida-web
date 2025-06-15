@@ -1,0 +1,251 @@
+/* --- FORMULARIOS MODERNOS --- */
+body.auth-body {
+    background: linear-gradient(to bottom, #ffe0ec, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.login-box {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #d63384;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #fdfdfd;
+    transition: 0.2s;
+}
+
+.auth-form input:focus {
+    border-color: #d63384;
+    outline: none;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to right, #ff69b4, #ffc0cb);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-form button:hover {
+    background: linear-gradient(to right, #ff1493, #ffa6c9);
+}
+
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.auth-link a {
+    color: #d63384;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- INICIO BONITO --- */
+body.inicio-body {
+    background: linear-gradient(to bottom right, #ffe0ec, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.inicio-box {
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 90%;
+}
+
+.inicio-titulo {
+    font-size: 32px;
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.marca {
+    color: #b3005f;
+    font-weight: bold;
+}
+
+.inicio-subtitulo {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.inicio-botones .btn-inicio {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #ff69b4, #ffc0cb);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.inicio-botones .btn-inicio:hover {
+    background: linear-gradient(to right, #ff1493, #ffa6c9);
+    transform: scale(1.05);
+}
+
+/* --- PANEL ADMIN --- */
+body.admin-body {
+    background: #fff0f5;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+.admin-container {
+    background: white;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.admin-title {
+    text-align: center;
+    color: #d63384;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.admin-subtitle {
+    color: #b3005f;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    text-align: center;
+    font-size: 15px;
+}
+
+.estado {
+    padding: 6px 12px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.estado.pendiente {
+    background: #ffc107;
+}
+
+.estado.aceptada {
+    background: #28a745;
+}
+
+.estado.cancelada {
+    background: #dc3545;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0 4px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn.verde {
+    background: #28a745;
+}
+
+.btn.amarillo {
+    background: #ffc107;
+    color: #000;
+}
+
+.btn.rojo {
+    background: #dc3545;
+}
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 768px) {
+    .admin-container, .inicio-box, .login-box {
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    .admin-title, .auth-title, .inicio-titulo {
+        font-size: 22px;
+    }
+
+    .admin-table th, .admin-table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin: 2px;
+    }
+
+    .inicio-botones .btn-inicio {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .auth-form input, .auth-form button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+

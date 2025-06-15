@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - Citas Yoleida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="auth-body">
+  <div class="login-box">
+    <h2 class="auth-title">💅 Iniciar Sesión</h2>
+    <form action="/login" method="POST" class="auth-form">
+      <input type="text" name="usuario" placeholder="Usuario" required>
+      <input type="password" name="contrasena" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p class="auth-link">¿No tienes cuenta? <a href="/registro">Regístrate aquí</a></p>
+  </div>
+</body>
+</html>

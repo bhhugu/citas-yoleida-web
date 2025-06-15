@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración - Citas Yoleida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="admin-body">
+    <div class="admin-container">
+        <h1 class="admin-title">💼 Panel de Administración</h1>
+
+        <h2 class="admin-subtitle">📅 Citas Agendadas</h2>
+        <table class="admin-table">
+            <tr>
+                <th>Usuario</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+            {% for cita in citas %}
+            <tr>
+                <td>{{ cita['usuario'] }}</td>
+                <td>{{ cita['fecha'] }}</td>
+                <td>{{ cita['hora'] }}</td>
+                <td>
+                    <span class="estado {{ cita['estado']|lower }}">{{ cita['estado'] }}</span>
+                </td>
+                <td>
+                    <!-- ACEPTAR -->
+                    <form method="POST" action="{{ url_for('actualizar_estado') }}" style="display:inline;">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <input type="hidden" name="estado" value="aceptada">
+                        <button type="submit" class="btn verde">Aceptar</button>
+                    </form>
+
+                    <!-- CANCELAR -->
+                    <form method="POST" action="{{ url_for('actualizar_estado') }}" style="display:inline;">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <input type="hidden" name="estado" value="cancelada">
+                        <button type="submit" class="btn amarillo">Cancelar</button>
+                    </form>
+
+                    <!-- ELIMINAR -->
+                    <form method="POST" action="{{ url_for('eliminar_cita') }}" style="display:inline;">
+                        <input type="hidden" name="index" value="{{ loop.index0 }}">
+                        <button type="submit" class="btn rojo">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2 class="admin-subtitle">👩‍🦰 Clientas Registradas</h2>
+        <table class="admin-table">
+            <tr>
+                <th>Usuario</th>
+            </tr>
+            {% for user in usuarios %}
+            <tr>
+                <td>{{ user['usuario'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
